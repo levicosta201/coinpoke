@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/', [\App\Http\Controllers\IndexController::class, 'index']);
 Route::get('/api/coin/price', [\App\Http\Controllers\CoinController::class, 'index'])->name('api.coin.convert');
 
-Auth::routes();
+//Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/buy/{poke_id}', [App\Http\Controllers\BuyController::class, 'buy'])->name('buy');
