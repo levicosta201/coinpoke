@@ -19,19 +19,19 @@ Route::get('/api/coin/price', [\App\Http\Controllers\CoinController::class, 'ind
 
 //Auth::routes();
 // Authentication Routes...
-$this->get('login', 'Auth\LoginController@showLoginForm')->name('login');
-$this->post('login', 'Auth\LoginController@login');
-$this->post('logout', 'Auth\LoginController@logout')->name('logout');
+Route::get('login', [\App\Http\Controllers\Auth\LoginController::class, 'showLoginForm'])->name('login');
+Route::post('login', [\App\Http\Controllers\Auth\LoginController::class, 'login']);
+Route::post('logout', [\App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('logout');
 
 // Registration Routes...
-$this->get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
-$this->post('register', 'Auth\RegisterController@register');
+Route::get('register', [\App\Http\Controllers\Auth\RegisterController::class, 'showRegistrationForm'])->name('register');
+Route::post('register', [\App\Http\Controllers\Auth\RegisterController::class, 'register']);
 
 // Password Reset Routes...
-$this->get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm');
-$this->post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail');
-$this->get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm');
-$this->post('password/reset', 'Auth\ResetPasswordController@reset');
+Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm');
+Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail');
+Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm');
+Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/buy/{poke_id}', [App\Http\Controllers\BuyController::class, 'buy'])->name('buy');
