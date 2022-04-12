@@ -100,7 +100,7 @@
                                         <th scope="col">Pokemon</th>
                                         <th scope="col">Experience</th>
                                         <th scope="col">Cotação do Dia</th>
-                                        <th scope="col">Valor da Compra</th>
+                                        <th scope="col">Valor da Compra/Venda</th>
                                         <th scope="col">Operação</th>
                                         <th scope="col">Data da Compra</th>
                                     </tr>
@@ -112,7 +112,7 @@
                                         <td>{{ $transaction->pokemon->base_experience }}</td>
                                         <td>{{ round($transaction->coin_price, 7) }}</td>
                                         <td>{{ round($transaction->coin_price * $transaction->pokemon->base_experience, 7) }}</td>
-                                        <td>{{ $transaction->operation }}</td>
+                                        <td>{{ $transaction->operation == 'buy' ? 'Compra' : 'Venda' }}</td>
                                         <td>{{ $transaction->created_at->format('d/m/Y') }}</td>
                                     </tr>
                                 @endforeach
