@@ -72,7 +72,7 @@
                                     <p class="small mb-0"><i class="fa-solid fa-star-sharp"></i>USD: $ <span class="font-weight-bold usdCoinValue-{{ $pokemon->id }} hidden"></span></p>
                                 </div>
                                 @if (Auth::check())
-                                    <button type="button" class="btn btn-primary mt-4 text-center justify-center">Comprar</button>
+                                    <a href="{{ route('buy', $pokemon->id) }}" class="btn btn-primary mt-4 text-center justify-center">Comprar</a>
                                 @endif
                             </div>
                         </div>

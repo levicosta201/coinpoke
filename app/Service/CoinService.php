@@ -24,8 +24,6 @@ class CoinService implements CoinServiceInterface
                 'convert' => 'USD'
             ]);
 
-//            $amountConverted['last_check'] = Carbon::now()->format('Y-m-d H:i:s');
-
             session()->put('satoshiToUsd', $amountConverted);
             return $amountConverted;
         }

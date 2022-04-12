@@ -3,12 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Service\PokemonServiceInterface;
+use App\Service\WalletServiceInterface;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
 
     protected $pokemonService;
+    protected $walletService;
 
     /**
      * Create a new controller instance.
@@ -16,11 +18,13 @@ class HomeController extends Controller
      * @return void
      */
     public function __construct(
-        PokemonServiceInterface $pokemonService
+        PokemonServiceInterface $pokemonService,
+        WalletServiceInterface $walletService
     )
     {
         $this->middleware('auth');
         $this->pokemonService = $pokemonService;
+        $this->walletService = $walletService;
     }
 
     /**
@@ -31,7 +35,9 @@ class HomeController extends Controller
     public function index()
     {
         return view('home')->with([
-            'pokemons' => $this->pokemonService->getByUserIdBuyed(auth()->user()->id)
+            'pokemons' => $this->pokemonService->getByUserIdBuyed(auth()->user()->id),
+            'totalWallet' => $this->walletService->total(),
+            'transactions' => $this->walletService->history()
         ]);
     }
 }

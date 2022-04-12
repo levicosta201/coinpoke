@@ -19,4 +19,5 @@ Route::get('/api/coin/price', [\App\Http\Controllers\CoinController::class, 'ind
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/buy/', [App\Http\Controllers\BuyController::class, 'buy'])->name('buy');
+Route::get('/buy/{poke_id}', [App\Http\Controllers\BuyController::class, 'buy'])->name('buy');
+Route::get('/sell/{poke_id}', [App\Http\Controllers\SellController::class, 'sell'])->name('sell');

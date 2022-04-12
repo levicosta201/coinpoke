@@ -9,7 +9,9 @@ use Prettus\Repository\Contracts\RepositoryInterface;
  *
  * @package namespace App\Repositories;
  */
-interface PokemonUserRepository extends RepositoryInterface
+interface BuyLogRepository extends RepositoryInterface
 {
-    public function getToalExpByUserId();
+    public function saveLog($data);
+
+    public function getLog();
 }
