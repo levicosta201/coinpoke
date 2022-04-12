@@ -51,7 +51,7 @@
                     <div class="col-lg-12 mx-auto">
                         <div class="text-white p-5 shadow-sm rounded banner">
                             <h1 class="display-4">Pokemons NFT's</h1>
-                            <p class="lead">Compre seu pokemon NFT.</p>
+                            <p class="lead">Compre seu pokemon NFT. Faça seu cadastro para realizar a compra!</p>
                         </div>
                     </div>
                 </div>
