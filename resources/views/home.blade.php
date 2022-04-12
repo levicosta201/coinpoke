@@ -113,7 +113,7 @@
                                         <td>{{ round($transaction->coin_price, 7) }}</td>
                                         <td>{{ round($transaction->coin_price * $transaction->pokemon->base_experience, 7) }}</td>
                                         <td>{{ $transaction->operation == 'buy' ? 'Compra' : 'Venda' }}</td>
-                                        <td>{{ $transaction->created_at->format('d/m/Y') }}</td>
+                                        <td>{{ $transaction->created_at->format('d/m/Y H:i:s') }}</td>
                                     </tr>
                                 @endforeach
                                 </tbody>
@@ -136,7 +136,9 @@
     <script>
         $(document).ready(function () {
 
-            $("#transactionLogTable").DataTable();
+            $("#transactionLogTable").DataTable({
+                "order": [[ 5, "desc" ]]
+            });
 
             getPokemonsPrice();
 
