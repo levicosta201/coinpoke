@@ -8,7 +8,7 @@
         "hot": "mix watch --hot",
         "prod": "npm run production",
         "production": "mix --production",
-        "postinstall": "npm install && npm run dev"
+        "postinstall": "npm run prod"
     },
     "dependencies": {
         "bower": "0.6.x"
